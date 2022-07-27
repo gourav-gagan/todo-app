@@ -1,6 +1,7 @@
 let express = require('express')
 let mongodb = require('mongodb')
 let mongoose = require('mongoose')
+let sanitizeHTML = require('sanitize-html')
 
 let app = express()
 let db
@@ -63,7 +64,8 @@ app.get('/', function(req, res){
 
 // Create item in database
 app.post('/create-item', function(req, res) {
-    db.collection('items').insertOne({text: req.body.text}, function(err, info) {
+    let safeText = sanitizeHTML(req.body.text, {allowedTags: [], allowedAttributes: {}})
+    db.collection('items').insertOne({text: safeText}, function(err, info) {
         if (info.acknowledged){
             res.send({text: req.body.text, _id: info.insertedId.toString()})
         }
@@ -72,7 +74,8 @@ app.post('/create-item', function(req, res) {
 
 // Update item in database
 app.post('/update-item', function(req, res){
-    db.collection('items').findOneAndUpdate({_id: new mongodb.ObjectId(req.body.id)}, {$set: {text: req.body.text}}, function(){
+    let safeText = sanitizeHTML(req.body.text, {allowedTags: [], allowedAttributes: {}})
+    db.collection('items').findOneAndUpdate({_id: new mongodb.ObjectId(req.body.id)}, {$set: {text: safeText}}, function(){
         res.send("Success")
     })
 })
