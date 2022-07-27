@@ -1,6 +1,5 @@
 package-lock.json
 package.json
-server.js
 node_modules/.package-lock.json
 node_modules/.bin/mime
 node_modules/.bin/mime.cmd
@@ -1715,4 +1714,3 @@ node_modules/whatwg-url/lib/URLSearchParams-impl.js
 node_modules/whatwg-url/lib/URLSearchParams.js
 node_modules/whatwg-url/lib/utils.js
 node_modules/whatwg-url/lib/VoidFunction.js
-public/browser.js
