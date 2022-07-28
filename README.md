@@ -12,6 +12,7 @@ Hosted on Heroku: https://todo-node-application.herokuapp.com/
 - Client Side rendering
 - Basic script-jacking protection using sanitize-html
 - Heroku deployement
+- Secured exposed mongodb connection string using heroku config vars
 
 ### Dependencies
 

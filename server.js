@@ -13,7 +13,7 @@ if (port == null || port == "") {
 
 app.use(express.static('public'))
 
-let connectionString = "mongodb+srv://todoAppUser:p4ssw0rd@cluster0.hswst.mongodb.net/todo-app?retryWrites=true&w=majority"
+let connectionString = process.env.CONNECTION_STRING
 
 // Connect to database
 mongoose.connect(connectionString, (err) => {
