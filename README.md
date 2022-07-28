@@ -1,6 +1,6 @@
 # To-Do List Project
 
-A simple 'To-Do List' project made using javascript in nodejs environement.
+A simple 'To-Do List' project made using javascript in nodejs environment.
 Hosted on Heroku: https://todo-node-application.herokuapp.com/
 
 ## Things I learned
