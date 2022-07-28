@@ -5,8 +5,10 @@ Hosted on Heroku: https://todo-node-application.herokuapp.com/
 
 ## Things I learned
 
-- Connection to mongodb database
-- CRUD operations on database
+- Send requests using web browser
+- Create a server that listens to requests using expressjs
+- Connection to mongodb database using mongoose
+- CRUD operations on database with axios 
 - Client Side rendering
 - Basic script-jacking protection using sanitize-html
 - Heroku deployement
