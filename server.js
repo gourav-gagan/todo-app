@@ -6,6 +6,11 @@ let sanitizeHTML = require('sanitize-html')
 let app = express()
 let db
 
+let port = process.env.PORT
+if (port == null || port == "") {
+    port = 3000
+}
+
 app.use(express.static('public'))
 
 let connectionString = "mongodb+srv://todoAppUser:p4ssw0rd@cluster0.hswst.mongodb.net/todo-app?retryWrites=true&w=majority"
@@ -14,7 +19,7 @@ let connectionString = "mongodb+srv://todoAppUser:p4ssw0rd@cluster0.hswst.mongod
 mongoose.connect(connectionString, (err) => {
 if (err) throw err
     db = mongoose.connection.db
-    app.listen(3000)
+    app.listen(port)
 })
 
 app.use(express.json())
