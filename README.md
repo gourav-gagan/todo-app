@@ -14,6 +14,11 @@ Hosted on Heroku: https://todo-node-application.herokuapp.com/
 - Heroku deployement
 - Secured exposed mongodb connection string using heroku config vars
 
+## Things to improve
+
+- Organisation
+- Unique Data per user
+
 ### Dependencies
 
 * nodejs
